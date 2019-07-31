@@ -1,0 +1,30 @@
+<!-- <h1>Destinations#show</h1>
+<p>Find me in app/views/destinations/show.html.erb</p> -->
+
+<h1>More Info About This Destination</h1>
+
+<p>
+  Name: <%= @destination.name %>
+</p>
+
+<p>
+  Country: <%= @destination.country %>
+</p>
+
+<h1>Posts about this destination</h1>
+
+<% @destination.posts.sort_by(&:created_at) %>
+
+<% @destination.posts.each_with_index do |post,index| %>
+  <% if index < 5 %>
+    <p>
+      Post <%= index + 1 %>:
+      <br>
+      Title: <%= post.title %>
+      <br>
+      Content: <%= post.content %>
+      <br>
+      Created at: <%= post.created_at %>
+    </p>
+  <% end %>
+<% end %>

@@ -1,0 +1,38 @@
+<!-- <h1>Bloggers#show</h1>
+<p>Find me in app/views/bloggers/show.html.erb</p> -->
+
+<h1>Blogger will be shown here</h1>
+
+<p>
+  Name: <%= @blogger.name %>
+</p>
+
+<p>
+  Bio: <%= @blogger.bio %>
+</p>
+
+<p>
+  Age: <%= @blogger.age %>
+</p>
+
+<h1>Create a new post for this blogger</h1>
+
+<%= form_for @post do |f| %>
+
+  <%= f.hidden_field :blogger_id, value: @blogger.id %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+
+  <%= f.label :likes %>
+  <%= f.number_field :likes %>
+
+  <%= f.label :destination_id %>
+  <%= f.collection_select(:destination_id, @destinations, :id, :name) %>
+
+  <%= f.submit %>
+
+<% end %>

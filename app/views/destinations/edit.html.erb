@@ -1,0 +1,16 @@
+<!-- <h1>Destinations#edit</h1>
+<p>Find me in app/views/destinations/edit.html.erb</p> -->
+
+<h1>Edit your destination</h1>
+
+<%= form_for @destination do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :country %>
+  <%= f.text_field :country %>
+
+  <%= f.submit %>
+
+<% end %>
